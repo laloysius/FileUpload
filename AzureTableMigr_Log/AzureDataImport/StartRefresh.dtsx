@@ -1,0 +1,1724 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/1/2022 9:48:27 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-EGEBD6L"
+  DTS:CreatorName="GULFRELAY\aaloysius"
+  DTS:DTSID="{36D3C253-1401-4168-950C-EC13CA42B841}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.948.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="103"
+  DTS:VersionGUID="{212DCDD0-5226-46C0-901D-ADB52907DB7F}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Insert into audit_log_tx"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{ece5639e-21c0-4644-bb54-3bb71cb3c944}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Insert into audit_log_tx"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Insert into audit_log_tx\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[audit_log_tx]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Insert into audit_log_tx\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{9751A718-63BB-4D1C-AB74-CCB880DAC0AD}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[AzurGFRA_1710]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Insert into audit_log_tx\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Insert into audit_log_tx\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[company_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="company_id"
+                      externalMetadataColumnId="Package\Insert into audit_log_tx\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[company_id]"
+                      lineageId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Output].Columns[company_id]" />
+                    <inputColumn
+                      refId="Package\Insert into audit_log_tx\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[application_id]"
+                      cachedDataType="i4"
+                      cachedName="application_id"
+                      externalMetadataColumnId="Package\Insert into audit_log_tx\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[application_id]"
+                      lineageId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Output].Columns[application_id]" />
+                    <inputColumn
+                      refId="Package\Insert into audit_log_tx\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[change_date_time]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="change_date_time"
+                      externalMetadataColumnId="Package\Insert into audit_log_tx\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[change_date_time]"
+                      lineageId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Output].Columns[change_date_time]" />
+                    <inputColumn
+                      refId="Package\Insert into audit_log_tx\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[changed_values]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="changed_values"
+                      externalMetadataColumnId="Package\Insert into audit_log_tx\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[changed_values]"
+                      lineageId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Output].Columns[changed_values]" />
+                    <inputColumn
+                      refId="Package\Insert into audit_log_tx\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="32"
+                      cachedName="id"
+                      externalMetadataColumnId="Package\Insert into audit_log_tx\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                      lineageId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Output].Columns[id]" />
+                    <inputColumn
+                      refId="Package\Insert into audit_log_tx\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[primary_key_crc]"
+                      cachedDataType="i4"
+                      cachedName="primary_key_crc"
+                      externalMetadataColumnId="Package\Insert into audit_log_tx\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[primary_key_crc]"
+                      lineageId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Output].Columns[primary_key_crc]" />
+                    <inputColumn
+                      refId="Package\Insert into audit_log_tx\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[primary_key_values]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="220"
+                      cachedName="primary_key_values"
+                      externalMetadataColumnId="Package\Insert into audit_log_tx\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[primary_key_values]"
+                      lineageId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Output].Columns[primary_key_values]" />
+                    <inputColumn
+                      refId="Package\Insert into audit_log_tx\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[table_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="table_name"
+                      externalMetadataColumnId="Package\Insert into audit_log_tx\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[table_name]"
+                      lineageId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Output].Columns[table_name]" />
+                    <inputColumn
+                      refId="Package\Insert into audit_log_tx\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[transaction_id]"
+                      cachedDataType="i4"
+                      cachedName="transaction_id"
+                      externalMetadataColumnId="Package\Insert into audit_log_tx\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[transaction_id]"
+                      lineageId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Output].Columns[transaction_id]" />
+                    <inputColumn
+                      refId="Package\Insert into audit_log_tx\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[user_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="user_id"
+                      externalMetadataColumnId="Package\Insert into audit_log_tx\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[user_id]"
+                      lineageId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Output].Columns[user_id]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Insert into audit_log_tx\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[company_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="company_id" />
+                    <externalMetadataColumn
+                      refId="Package\Insert into audit_log_tx\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[application_id]"
+                      dataType="i4"
+                      name="application_id" />
+                    <externalMetadataColumn
+                      refId="Package\Insert into audit_log_tx\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[change_date_time]"
+                      dataType="dbTimeStamp"
+                      name="change_date_time" />
+                    <externalMetadataColumn
+                      refId="Package\Insert into audit_log_tx\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[changed_values]"
+                      codePage="1252"
+                      dataType="text"
+                      name="changed_values" />
+                    <externalMetadataColumn
+                      refId="Package\Insert into audit_log_tx\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Insert into audit_log_tx\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[primary_key_crc]"
+                      dataType="i4"
+                      name="primary_key_crc" />
+                    <externalMetadataColumn
+                      refId="Package\Insert into audit_log_tx\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[primary_key_values]"
+                      codePage="1252"
+                      dataType="str"
+                      length="220"
+                      name="primary_key_values" />
+                    <externalMetadataColumn
+                      refId="Package\Insert into audit_log_tx\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[table_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="table_name" />
+                    <externalMetadataColumn
+                      refId="Package\Insert into audit_log_tx\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[transaction_id]"
+                      dataType="i4"
+                      name="transaction_id" />
+                    <externalMetadataColumn
+                      refId="Package\Insert into audit_log_tx\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[user_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="user_id" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Insert into audit_log_tx\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Insert into audit_log_tx\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert into audit_log_tx\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insert into audit_log_tx\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insert into audit_log_tx\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insert into audit_log_tx\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Insert into audit_log_tx\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[audit_log_tx]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Insert into audit_log_tx\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="{197E02CC-7F7C-48AE-A31E-1449F5BCCE3E}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DWHGFRA_REPL.gfra_1710.]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Output].Columns[company_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[company_id]"
+                      length="4"
+                      lineageId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Output].Columns[company_id]"
+                      name="company_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Output].Columns[application_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[application_id]"
+                      lineageId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Output].Columns[application_id]"
+                      name="application_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Output].Columns[change_date_time]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[change_date_time]"
+                      lineageId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Output].Columns[change_date_time]"
+                      name="change_date_time"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Output].Columns[changed_values]"
+                      codePage="1252"
+                      dataType="text"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[changed_values]"
+                      lineageId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Output].Columns[changed_values]"
+                      name="changed_values"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Output].Columns[id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                      length="32"
+                      lineageId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Output].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Output].Columns[primary_key_crc]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[primary_key_crc]"
+                      lineageId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Output].Columns[primary_key_crc]"
+                      name="primary_key_crc"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Output].Columns[primary_key_values]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[primary_key_values]"
+                      length="220"
+                      lineageId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Output].Columns[primary_key_values]"
+                      name="primary_key_values"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Output].Columns[table_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[table_name]"
+                      length="30"
+                      lineageId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Output].Columns[table_name]"
+                      name="table_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Output].Columns[transaction_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[transaction_id]"
+                      lineageId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Output].Columns[transaction_id]"
+                      name="transaction_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Output].Columns[user_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[user_id]"
+                      length="10"
+                      lineageId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Output].Columns[user_id]"
+                      name="user_id"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[company_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="company_id" />
+                    <externalMetadataColumn
+                      refId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[application_id]"
+                      dataType="i4"
+                      name="application_id" />
+                    <externalMetadataColumn
+                      refId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[change_date_time]"
+                      dataType="dbTimeStamp"
+                      name="change_date_time" />
+                    <externalMetadataColumn
+                      refId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[changed_values]"
+                      codePage="1252"
+                      dataType="text"
+                      name="changed_values" />
+                    <externalMetadataColumn
+                      refId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[primary_key_crc]"
+                      dataType="i4"
+                      name="primary_key_crc" />
+                    <externalMetadataColumn
+                      refId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[primary_key_values]"
+                      codePage="1252"
+                      dataType="str"
+                      length="220"
+                      name="primary_key_values" />
+                    <externalMetadataColumn
+                      refId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[table_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="table_name" />
+                    <externalMetadataColumn
+                      refId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[transaction_id]"
+                      dataType="i4"
+                      name="transaction_id" />
+                    <externalMetadataColumn
+                      refId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[user_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="user_id" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[company_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[company_id]"
+                      name="company_id" />
+                    <outputColumn
+                      refId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[application_id]"
+                      dataType="i4"
+                      lineageId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[application_id]"
+                      name="application_id" />
+                    <outputColumn
+                      refId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[change_date_time]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[change_date_time]"
+                      name="change_date_time" />
+                    <outputColumn
+                      refId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[changed_values]"
+                      codePage="1252"
+                      dataType="text"
+                      lineageId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[changed_values]"
+                      name="changed_values" />
+                    <outputColumn
+                      refId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      lineageId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id]"
+                      name="id" />
+                    <outputColumn
+                      refId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[primary_key_crc]"
+                      dataType="i4"
+                      lineageId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[primary_key_crc]"
+                      name="primary_key_crc" />
+                    <outputColumn
+                      refId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[primary_key_values]"
+                      codePage="1252"
+                      dataType="str"
+                      length="220"
+                      lineageId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[primary_key_values]"
+                      name="primary_key_values" />
+                    <outputColumn
+                      refId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[table_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[table_name]"
+                      name="table_name" />
+                    <outputColumn
+                      refId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[transaction_id]"
+                      dataType="i4"
+                      lineageId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[transaction_id]"
+                      name="transaction_id" />
+                    <outputColumn
+                      refId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[user_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[user_id]"
+                      name="user_id" />
+                    <outputColumn
+                      refId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Insert into audit_log_tx.Paths[OLE DB Source Output]"
+              endId="Package\Insert into audit_log_tx\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Insert into audit_log_tx\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Insert into order_post_hist"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{83979ECD-CD70-42D6-9461-2F38D2A1D68D}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Insert into order_post_hist"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Insert into order_post_hist\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Insert into order_post_hist\OLE DB Destination.Connections[OleDbConnection]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Insert into order_post_hist\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <externalMetadataColumns
+                    isUsed="True" />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Insert into order_post_hist\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Insert into order_post_hist\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert into order_post_hist\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insert into order_post_hist\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insert into order_post_hist\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insert into order_post_hist\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Insert into order_post_hist\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Insert into order_post_hist\OLE DB Source.Connections[OleDbConnection]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Insert into order_post_hist\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <externalMetadataColumns
+                    isUsed="True" />
+                </output>
+                <output
+                  refId="Package\Insert into order_post_hist\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert into order_post_hist\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insert into order_post_hist\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insert into order_post_hist\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insert into order_post_hist\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Insert tinto audit_log"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{D74FAB97-19CA-4D4B-8ACE-A3ED34042763}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Insert tinto audit_log"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Insert tinto audit_log\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[audit_log]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Insert tinto audit_log\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{9751A718-63BB-4D1C-AB74-CCB880DAC0AD}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[AzurGFRA_1710]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Insert tinto audit_log\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Insert tinto audit_log\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[company_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="company_id"
+                      externalMetadataColumnId="Package\Insert tinto audit_log\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[company_id]"
+                      lineageId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Output].Columns[company_id]" />
+                    <inputColumn
+                      refId="Package\Insert tinto audit_log\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[application_id]"
+                      cachedDataType="i4"
+                      cachedName="application_id"
+                      externalMetadataColumnId="Package\Insert tinto audit_log\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[application_id]"
+                      lineageId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Output].Columns[application_id]" />
+                    <inputColumn
+                      refId="Package\Insert tinto audit_log\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[change_date_time]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="change_date_time"
+                      externalMetadataColumnId="Package\Insert tinto audit_log\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[change_date_time]"
+                      lineageId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Output].Columns[change_date_time]" />
+                    <inputColumn
+                      refId="Package\Insert tinto audit_log\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[changed_values]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="changed_values"
+                      externalMetadataColumnId="Package\Insert tinto audit_log\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[changed_values]"
+                      lineageId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Output].Columns[changed_values]" />
+                    <inputColumn
+                      refId="Package\Insert tinto audit_log\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="32"
+                      cachedName="id"
+                      externalMetadataColumnId="Package\Insert tinto audit_log\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                      lineageId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Output].Columns[id]" />
+                    <inputColumn
+                      refId="Package\Insert tinto audit_log\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[primary_key_crc]"
+                      cachedDataType="i4"
+                      cachedName="primary_key_crc"
+                      externalMetadataColumnId="Package\Insert tinto audit_log\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[primary_key_crc]"
+                      lineageId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Output].Columns[primary_key_crc]" />
+                    <inputColumn
+                      refId="Package\Insert tinto audit_log\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[primary_key_values]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="220"
+                      cachedName="primary_key_values"
+                      externalMetadataColumnId="Package\Insert tinto audit_log\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[primary_key_values]"
+                      lineageId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Output].Columns[primary_key_values]" />
+                    <inputColumn
+                      refId="Package\Insert tinto audit_log\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[table_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="table_name"
+                      externalMetadataColumnId="Package\Insert tinto audit_log\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[table_name]"
+                      lineageId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Output].Columns[table_name]" />
+                    <inputColumn
+                      refId="Package\Insert tinto audit_log\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[transaction_id]"
+                      cachedDataType="i4"
+                      cachedName="transaction_id"
+                      externalMetadataColumnId="Package\Insert tinto audit_log\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[transaction_id]"
+                      lineageId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Output].Columns[transaction_id]" />
+                    <inputColumn
+                      refId="Package\Insert tinto audit_log\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[user_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="user_id"
+                      externalMetadataColumnId="Package\Insert tinto audit_log\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[user_id]"
+                      lineageId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Output].Columns[user_id]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Insert tinto audit_log\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[company_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="company_id" />
+                    <externalMetadataColumn
+                      refId="Package\Insert tinto audit_log\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[application_id]"
+                      dataType="i4"
+                      name="application_id" />
+                    <externalMetadataColumn
+                      refId="Package\Insert tinto audit_log\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[change_date_time]"
+                      dataType="dbTimeStamp"
+                      name="change_date_time" />
+                    <externalMetadataColumn
+                      refId="Package\Insert tinto audit_log\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[changed_values]"
+                      codePage="1252"
+                      dataType="text"
+                      name="changed_values" />
+                    <externalMetadataColumn
+                      refId="Package\Insert tinto audit_log\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Insert tinto audit_log\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[primary_key_crc]"
+                      dataType="i4"
+                      name="primary_key_crc" />
+                    <externalMetadataColumn
+                      refId="Package\Insert tinto audit_log\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[primary_key_values]"
+                      codePage="1252"
+                      dataType="str"
+                      length="220"
+                      name="primary_key_values" />
+                    <externalMetadataColumn
+                      refId="Package\Insert tinto audit_log\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[table_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="table_name" />
+                    <externalMetadataColumn
+                      refId="Package\Insert tinto audit_log\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[transaction_id]"
+                      dataType="i4"
+                      name="transaction_id" />
+                    <externalMetadataColumn
+                      refId="Package\Insert tinto audit_log\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[user_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="user_id" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Insert tinto audit_log\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Insert tinto audit_log\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert tinto audit_log\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insert tinto audit_log\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insert tinto audit_log\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insert tinto audit_log\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Insert tinto audit_log\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[audit_log]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT* FROM [gfra_1710].[dbo].[audit_log] WHERE CONVERT(date, change_date_time) &gt;= '2023-01-01'</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Insert tinto audit_log\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="{197E02CC-7F7C-48AE-A31E-1449F5BCCE3E}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DWHGFRA_REPL.gfra_1710.]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Output].Columns[company_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[company_id]"
+                      length="4"
+                      lineageId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Output].Columns[company_id]"
+                      name="company_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Output].Columns[application_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[application_id]"
+                      lineageId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Output].Columns[application_id]"
+                      name="application_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Output].Columns[change_date_time]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[change_date_time]"
+                      lineageId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Output].Columns[change_date_time]"
+                      name="change_date_time"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Output].Columns[changed_values]"
+                      codePage="1252"
+                      dataType="text"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[changed_values]"
+                      lineageId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Output].Columns[changed_values]"
+                      name="changed_values"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Output].Columns[id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                      length="32"
+                      lineageId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Output].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Output].Columns[primary_key_crc]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[primary_key_crc]"
+                      lineageId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Output].Columns[primary_key_crc]"
+                      name="primary_key_crc"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Output].Columns[primary_key_values]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[primary_key_values]"
+                      length="220"
+                      lineageId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Output].Columns[primary_key_values]"
+                      name="primary_key_values"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Output].Columns[table_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[table_name]"
+                      length="30"
+                      lineageId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Output].Columns[table_name]"
+                      name="table_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Output].Columns[transaction_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[transaction_id]"
+                      lineageId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Output].Columns[transaction_id]"
+                      name="transaction_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Output].Columns[user_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[user_id]"
+                      length="10"
+                      lineageId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Output].Columns[user_id]"
+                      name="user_id"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[company_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="company_id" />
+                    <externalMetadataColumn
+                      refId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[application_id]"
+                      dataType="i4"
+                      name="application_id" />
+                    <externalMetadataColumn
+                      refId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[change_date_time]"
+                      dataType="dbTimeStamp"
+                      name="change_date_time" />
+                    <externalMetadataColumn
+                      refId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[changed_values]"
+                      codePage="1252"
+                      dataType="text"
+                      name="changed_values" />
+                    <externalMetadataColumn
+                      refId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[primary_key_crc]"
+                      dataType="i4"
+                      name="primary_key_crc" />
+                    <externalMetadataColumn
+                      refId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[primary_key_values]"
+                      codePage="1252"
+                      dataType="str"
+                      length="220"
+                      name="primary_key_values" />
+                    <externalMetadataColumn
+                      refId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[table_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="table_name" />
+                    <externalMetadataColumn
+                      refId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[transaction_id]"
+                      dataType="i4"
+                      name="transaction_id" />
+                    <externalMetadataColumn
+                      refId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[user_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="user_id" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[company_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[company_id]"
+                      name="company_id" />
+                    <outputColumn
+                      refId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[application_id]"
+                      dataType="i4"
+                      lineageId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[application_id]"
+                      name="application_id" />
+                    <outputColumn
+                      refId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[change_date_time]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[change_date_time]"
+                      name="change_date_time" />
+                    <outputColumn
+                      refId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[changed_values]"
+                      codePage="1252"
+                      dataType="text"
+                      lineageId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[changed_values]"
+                      name="changed_values" />
+                    <outputColumn
+                      refId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      lineageId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id]"
+                      name="id" />
+                    <outputColumn
+                      refId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[primary_key_crc]"
+                      dataType="i4"
+                      lineageId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[primary_key_crc]"
+                      name="primary_key_crc" />
+                    <outputColumn
+                      refId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[primary_key_values]"
+                      codePage="1252"
+                      dataType="str"
+                      length="220"
+                      lineageId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[primary_key_values]"
+                      name="primary_key_values" />
+                    <outputColumn
+                      refId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[table_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[table_name]"
+                      name="table_name" />
+                    <outputColumn
+                      refId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[transaction_id]"
+                      dataType="i4"
+                      lineageId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[transaction_id]"
+                      name="transaction_id" />
+                    <outputColumn
+                      refId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[user_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[user_id]"
+                      name="user_id" />
+                    <outputColumn
+                      refId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Insert tinto audit_log.Paths[OLE DB Source Output]"
+              endId="Package\Insert tinto audit_log\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Insert tinto audit_log\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate order_post_hist_"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{A9F99FE6-2CE5-40CE-83A6-0D337146B5ED}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate order_post_hist_"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{197E02CC-7F7C-48AE-A31E-1449F5BCCE3E}"
+          SQLTask:SqlStatementSource="Truncate table order_post_hist" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate table audit_log"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{B1753163-A701-4EDD-9762-6ADC56743B4B}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate table audit_log"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{9751A718-63BB-4D1C-AB74-CCB880DAC0AD}"
+          SQLTask:SqlStatementSource="Truncate table [dbo].[audit_log]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate table audit_log_tx"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{5f988095-2493-4699-b9b2-a87cb9fa1dc6}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate table audit_log_tx"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{9751A718-63BB-4D1C-AB74-CCB880DAC0AD}"
+          SQLTask:SqlStatementSource="Truncate table [dbo].[audit_log_tx]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{CE31FAAA-11D1-43E7-B745-1D89F8CF3AF0}"
+      DTS:From="Package\Truncate table audit_log"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Insert tinto audit_log" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{3C13D67A-448A-4B9F-9F79-482BB3B2E8BF}"
+      DTS:From="Package\Insert tinto audit_log"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Truncate table audit_log_tx" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{BA6CD6DD-402A-419E-B5CC-F45A8E6B96A6}"
+      DTS:From="Package\Truncate table audit_log_tx"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Insert into audit_log_tx" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{65B59F89-AF41-4EC3-B3C1-8A120A655306}"
+      DTS:From="Package\Truncate order_post_hist_"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Insert into order_post_hist" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="190,42"
+          Id="Package\Insert into audit_log_tx"
+          TopLeft="562,478" />
+        <NodeLayout
+          Size="178,42"
+          Id="Package\Insert tinto audit_log"
+          TopLeft="556,281" />
+        <NodeLayout
+          Size="197,42"
+          Id="Package\Truncate table audit_log"
+          TopLeft="531,168" />
+        <NodeLayout
+          Size="212,42"
+          Id="Package\Truncate table audit_log_tx"
+          TopLeft="545,371" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="629.5,210">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="15.5,71"
+              Start="0,0"
+              End="15.5,63.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.5"
+                    Point2="0,35.5"
+                    Point3="4,35.5" />
+                  <mssgle:LineSegment
+                    End="11.5,35.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="11.5,35.5"
+                    Point2="15.5,35.5"
+                    Point3="15.5,39.5" />
+                  <mssgle:LineSegment
+                    End="15.5,63.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="648,323">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48"
+              Start="0,0"
+              End="0,40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="654,413">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,65"
+              Start="0,0"
+              End="0,57.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="207,42"
+          Id="Package\Truncate order_post_hist_"
+          TopLeft="563,559" />
+        <NodeLayout
+          Size="206,42"
+          Id="Package\Insert into order_post_hist"
+          TopLeft="584,659" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="666.5,601">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="20.5,58"
+              Start="0,0"
+              End="20.5,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25"
+                    Point2="0,29"
+                    Point3="4,29" />
+                  <mssgle:LineSegment
+                    End="16.5,29" />
+                  <mssgle:CubicBezierSegment
+                    Point1="16.5,29"
+                    Point2="20.5,29"
+                    Point3="20.5,33" />
+                  <mssgle:LineSegment
+                    End="20.5,50.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Insert into audit_log_tx">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Insert into audit_log_tx\OLE DB Source"
+          TopLeft="538,170" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Insert into audit_log_tx\OLE DB Destination"
+          TopLeft="560,307" />
+        <EdgeLayout
+          Id="Package\Insert into audit_log_tx.Paths[OLE DB Source Output]"
+          TopLeft="616.5,212">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="32,95"
+              Start="0,0"
+              End="32,87.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,43.5"
+                    Point2="0,47.5"
+                    Point3="4,47.5" />
+                  <mssgle:LineSegment
+                    End="28,47.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="28,47.5"
+                    Point2="32,47.5"
+                    Point3="32,51.5" />
+                  <mssgle:LineSegment
+                    End="32,87.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insert into audit_log_tx\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insert into audit_log_tx\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Insert tinto audit_log">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Insert tinto audit_log\OLE DB Source"
+          TopLeft="558,95" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Insert tinto audit_log\OLE DB Destination"
+          TopLeft="572,258" />
+        <EdgeLayout
+          Id="Package\Insert tinto audit_log.Paths[OLE DB Source Output]"
+          TopLeft="636.5,137">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="24,121"
+              Start="0,0"
+              End="24,113.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,56.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,56.5"
+                    Point2="0,60.5"
+                    Point3="4,60.5" />
+                  <mssgle:LineSegment
+                    End="20,60.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="20,60.5"
+                    Point2="24,60.5"
+                    Point3="24,64.5" />
+                  <mssgle:LineSegment
+                    End="24,113.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insert tinto audit_log\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insert tinto audit_log\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Insert into order_post_hist">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Insert into order_post_hist\OLE DB Destination"
+          TopLeft="419,404" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Insert into order_post_hist\OLE DB Source"
+          TopLeft="422,268" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

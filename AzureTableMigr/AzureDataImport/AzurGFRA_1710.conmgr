@@ -1,0 +1,16 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="AzurGFRA_1710"
+  DTS:DTSID="{9751A718-63BB-4D1C-AB74-CCB880DAC0AD}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=grprodsqlsvr01.database.windows.net;User ID=sqlsaadmin;Initial Catalog=GFRA_1710;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-Package-{9751A718-63BB-4D1C-AB74-CCB880DAC0AD}grprodsqlsvr01.database.windows.net.GFRA_1710.sqlsaadmin;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAxvWR85RmYEeG5NTkFQ1+DwAAAAACAAAAAAAQZgAAAAEAACAAAAC0SipAv64R0/ZEZIiLXSxImoLr8zxd945rBhc9gML1lAAAAAAOgAAAAAIAACAAAAByOq7EGJnuEK1ibo7ra5pdG/e46wH1skVRGGfsVOCsZ4AAAACtJse/l6UIAvRRJ+9gS6Uc41xXoKiApc+3uQGw3204sb3YFohcS+eXut0lMHy3KJNTuNdBrxI9KNc7TvmL8ACWgKWDTBvDZYBGRKxhDUFAPucASAnj5w4AuYaXplA9f3rR9YCJT1067A+LRT3Vmy+d9Qq+dtSjOXBQHy4Ie+DvVkAAAAA332i4yTbVlB37X+7LmsIq6+7UkmexQ/41C03MqkUX/YRHtUmgOKjrsqFaGNwkZKEcR9fU8Yl8Xv8c8/7/1eWv</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

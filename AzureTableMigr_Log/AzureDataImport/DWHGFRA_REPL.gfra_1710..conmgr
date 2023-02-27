@@ -1,0 +1,16 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="DWHGFRA_REPL.gfra_1710."
+  DTS:DTSID="{197E02CC-7F7C-48AE-A31E-1449F5BCCE3E}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=172.27.40.223\GFRA_REPL;User ID=reports;Initial Catalog=gfra_1710;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-Package1-{197E02CC-7F7C-48AE-A31E-1449F5BCCE3E}172.27.40.223\GFRA_REPL.gfra_1710.reports;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAxvWR85RmYEeG5NTkFQ1+DwAAAAACAAAAAAAQZgAAAAEAACAAAAAAz9JPdPoiLjbSRYB52JU+iyA1hZprnZ/085zEPb/SlAAAAAAOgAAAAAIAACAAAADOkxaSeEcI2qReDmyQZe8E5Vl5IFNQL2ixqaPJ7ymVXYAAAACu+o+fSQNQCkq2ULt3wx/+9LAXFAxSuyUYo5/SwICNzcKM2gyyBWqX1vNKMZCZs3A8/44Mfaa5jyuQZMFaEzw3tMwCHjUN9MNLumUE4kmRcZUT/JE7UJbKg8Im1jVIdb/kDN4I9Wa2Hcz+LGJkgn+e3koyq+8DxuV5Qj61g+l5HEAAAABvn6MZ5L2owbuGp9t3pBCRj0IZDRT6xGFNWOMdnbQ4vu9XlgpjH2kWNMxlMp9KUjaAycPlOqd59qaavxsKhxKo</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
